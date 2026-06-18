@@ -1,4 +1,5 @@
-# llm launcher (optimzed for RTX 4070 12 GB VRAM + 32 GB RAM + 128K Context)
+# llm launcher 
+### (optimzed for RTX 4070 12 GB VRAM + 32 GB RAM + 128K Context)
 
 Terminal llm launcher script for `llama-server` with pre-configured models and optimal settings for specific hardware. 
 Picks a model via fzf (or Bash `select`), then launches it with tuned flags.
