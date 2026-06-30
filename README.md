@@ -37,12 +37,16 @@ Example:
 
 ## Sample models (tested on RTX 4070 with evalscope speed benchmark)
 
-| Model | Ctx | VRAM | Speed |
-|-------|-----|------|-------|
-| Gemma-4-12B (Q4_K_XL) | 128K | 6.2 GB | 56 t/s |
-| Qwopus35B-A3B (IQ4_XS) | 128K | 6.2 GB | 40 t/s |
-| Qwopus9B-Coder (Exp-IQ4_XS) | 128K | 6.7 GB | 78 t/s |
-| North-Mini-Code-1.0 (UD-IQ1_M) | 128K | 8.7 GB | 53 t/s |
+| Model | Ctx | VRAM | Speed | Notes |
+|-------|-----|------|-------|-------|
+| Qwopus35B-Coder-MTP (IQ4_XS) | 128K | ~6.2 GB | 44 t/s | ⭐ Fast agentic coder (MoE, ~3B active, 19.4 GB) |
+| Qwopus35B-A3B-MTP (Q4_K_M) | 128K | ~6.2 GB | 44 t/s | General MTP MoE (20.2 GB) |
+| Gemma-4-12B (Q4_K_XL) | 128K | 6.2 GB | 56 t/s | Small fast model (6.3 GB) |
+| Qwopus9B-Coder (Exp-IQ4_XS) | 128K | 6.7 GB | 78 t/s | Fast 9B coder |
+| Godoter-27B (Q4_K_S) | 32K | 11.7 GB | 5.4 t/s | Dense 27B Godot specialist |
+| North-Mini-Code-1.0 (UD-IQ1_M) | 128K | 8.7 GB | 53 t/s | Ultra-compact code model |
+
+**Recommended for agentic coding**: `Qwopus35B-Coder-MTP (IQ4_XS)` — 44 t/s at 128K context, only ~3B active params. Set temperature=0.0 for deterministic tool use. Native 262K context support.
 
 ## Customization
 
